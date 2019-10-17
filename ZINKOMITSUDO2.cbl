@@ -119,5 +119,5 @@
               
            END-PERFORM.
            CLOSE RESULT-FILE.
-       MAIN-EXT.
-           GOBACK.
+      *MAIN-EXT.
+      *    GOBACK.
