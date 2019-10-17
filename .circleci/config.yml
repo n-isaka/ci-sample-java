@@ -5,9 +5,8 @@ jobs:
       - image: norisaka/cobjava
     steps:
       - checkout
-      - run: export CLASSPATH="$CLASSPATH":/oscobol/oscobol_java/libcobj/bin
-      - run: cobc -m ZINKOMITSUDO2.cbl
-      - run: java -Dfile.encoding=UTF-8 ZINKOMITSUDO2
+      - run: bash compile.sh
+      - run: bash run.sh
       - run: mkdir /tmp/test-results
       - run: cp RESULT-SEQ /tmp/test-results
       # Save artifacts
