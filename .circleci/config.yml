@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: norisaka/cobjava
+    steps:
+      - checkout
+      - run: cobc -m ZINKOMITSUDO2.cbl
+      - run: java -Dfile.encoding=UTF-8 ZINKOMITSUDO2
+      - run: mkdir /tmp/test-results
+      - run: cp RESULT-SEQ /tmp/test-results
+      # Save artifacts
+      - store_artifacts:
+          path: /tmp/test-results
+      #    destination: prefix
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
