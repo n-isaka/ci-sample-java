@@ -9,6 +9,7 @@ jobs:
       - run: bash run.sh
       - run: mkdir /tmp/test-results
       - run: cp RESULT-SEQ /tmp/test-results
+      - run: cp ZINKOMITSUDO2.java  /tmp/test-results
       # Save artifacts
       - store_artifacts:
           path: /tmp/test-results
